@@ -1,4 +1,3 @@
-<!-- Banner yoki logo -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/Eldjey/test_project/main/assets/banner.gif" alt="Banner" width="100%" />
 </p>
