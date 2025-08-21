@@ -1,13 +1,253 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <title>New Project</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TestSite — TailwindCSS Demo</title>
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Ixtiyoriy: Tailwind konfiguratsiyasini biroz sozlaymiz
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+          },
+          boxShadow: {
+            soft: "0 10px 20px rgba(0,0,0,0.05), 0 6px 6px rgba(0,0,0,0.05)",
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-  
+<body class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800 font-display">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-slate-200/60">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#" class="flex items-center gap-2 font-extrabold text-xl tracking-tight">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900 text-white">TS</span>
+          <span class="text-slate-900">TestSite</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="#features" class="hover:text-slate-900 text-slate-600">Xususiyatlar</a>
+          <a href="#pricing" class="hover:text-slate-900 text-slate-600">Narxlar</a>
+          <a href="#faq" class="hover:text-slate-900 text-slate-600">FAQ</a>
+          <a href="#" class="px-4 py-2 rounded-2xl bg-slate-900 text-white hover:bg-slate-800 transition">Boshlash</a>
+        </nav>
+        <button class="md:hidden inline-flex items-center justify-center rounded-xl border border-slate-300/80 px-3 py-2 text-sm" aria-label="Menu">
+          <!-- Hamburger icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-indigo-200/40 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-cyan-200/40 blur-3xl"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white/70 px-3 py-1 text-xs text-slate-600 shadow-soft">
+            <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+            Tailwind bilan 5 daqiqada tayyor
+          </p>
+          <h1 class="mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
+            Oddiy, chiroyli va tezkor <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-cyan-600">landing</span>
+          </h1>
+          <p class="mt-4 text-slate-600 text-lg leading-relaxed">
+            Bu sahifa sinov (test) uchun yozilgan. Kodni ko‘chirib olib darhol oching va o‘zingizga moslab o‘zgartiring.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#" class="px-5 py-3 rounded-2xl bg-slate-900 text-white hover:bg-slate-800 transition font-semibold shadow-soft">Boshlash</a>
+            <a href="#features" class="px-5 py-3 rounded-2xl border border-slate-300/80 bg-white/70 text-slate-800 hover:bg-white transition font-semibold">Ko‘proq bilish</a>
+          </div>
+          <div class="mt-6 flex items-center gap-6 text-sm text-slate-600">
+            <div class="flex items-center gap-2"><span class="font-bold text-slate-900">⚡ Tez</span> — CDN orqali</div>
+            <div class="flex items-center gap-2"><span class="font-bold text-slate-900">🎯 Minimal</span> — keraksiz kod yo‘q</div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="rounded-3xl border border-slate-200 bg-white/80 p-4 shadow-soft">
+            <div class="aspect-[16/10] rounded-2xl bg-slate-900/95 p-4 text-slate-100">
+              <pre class="text-xs sm:text-sm overflow-auto h-full"><code>// Tailwind bilan start (CDN)
+&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+
+&lt;button class="px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500"&gt;
+  Boshlash
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-slate-900">Nega aynan TestSite?</h2>
+        <p class="mt-3 text-slate-600">Quyidagi oddiy komponentlar bilan boshlang, keyin keraklicha kengaytiring.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <div class="h-10 w-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold">1</div>
+          <h3 class="mt-4 font-bold text-lg text-slate-900">Responsiv dizayn</h3>
+          <p class="mt-1 text-slate-600">Grid va flex yordamida barcha ekranlarda mos ko‘rinish.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <div class="h-10 w-10 rounded-xl bg-cyan-100 flex items-center justify-center text-cyan-700 font-bold">2</div>
+          <h3 class="mt-4 font-bold text-lg text-slate-900">Yengil va tez</h3>
+          <p class="mt-1 text-slate-600">CDN orqali bir zumda ulanish — build bosqichisiz.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <div class="h-10 w-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold">3</div>
+          <h3 class="mt-4 font-bold text-lg text-slate-900">Tahrirlash oson</h3>
+          <p class="mt-1 text-slate-600">Klasslarni o‘zgartirib, dizaynni tezda moslashtiring.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <div class="h-10 w-10 rounded-xl bg-rose-100 flex items-center justify-center text-rose-700 font-bold">4</div>
+          <h3 class="mt-4 font-bold text-lg text-slate-900">Toza komponentlar</h3>
+          <p class="mt-1 text-slate-600">Minimalist bloklar: karta, badge, tugma, input va h.k.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <div class="h-10 w-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-700 font-bold">5</div>
+          <h3 class="mt-4 font-bold text-lg text-slate-900">Moslashuvchan ranglar</h3>
+          <p class="mt-1 text-slate-600">Sizga yoqqan palette bilan tezda o‘zgartiring.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <div class="h-10 w-10 rounded-xl bg-fuchsia-100 flex items-center justify-center text-fuchsia-700 font-bold">6</div>
+          <h3 class="mt-4 font-bold text-lg text-slate-900">Keng community</h3>
+          <p class="mt-1 text-slate-600">Ko‘plab misollar, pluginlar, shablonlar mavjud.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-16 bg-white/60 border-y border-slate-200/70">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-extrabold text-slate-900">Oddiy narxlar</h2>
+        <p class="mt-3 text-slate-600">Test uchun shunchaki namuna, real to‘lov yo‘q 🙂</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Free -->
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <h3 class="text-xl font-bold text-slate-900">Free</h3>
+          <p class="mt-1 text-slate-600">Boshlash uchun yetarli</p>
+          <div class="mt-4 text-4xl font-extrabold text-slate-900">$0</div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600">
+            <li>✔ CDN orqali Tailwind</li>
+            <li>✔ Oddiy komponentlar</li>
+            <li>✔ Responsiv maket</li>
+          </ul>
+          <button class="mt-6 w-full px-4 py-3 rounded-2xl border border-slate-300/80 bg-white hover:bg-slate-50 transition font-semibold">Tanlash</button>
+        </div>
+        <!-- Pro -->
+        <div class="rounded-3xl border-2 border-slate-900 bg-white p-6 shadow-soft relative">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold text-white">Mashhur</span>
+          <h3 class="text-xl font-bold text-slate-900">Pro</h3>
+          <p class="mt-1 text-slate-600">Ko‘proq nazorat va bloklar</p>
+          <div class="mt-4 text-4xl font-extrabold text-slate-900">$9</div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600">
+            <li>✔ Tayyor shablonlar</li>
+            <li>✔ Qo‘shimcha komponentlar</li>
+            <li>✔ Oddiy animatsiyalar</li>
+          </ul>
+          <button class="mt-6 w-full px-4 py-3 rounded-2xl bg-slate-900 text-white hover:bg-slate-800 transition font-semibold">Tanlash</button>
+        </div>
+        <!-- Team -->
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <h3 class="text-xl font-bold text-slate-900">Team</h3>
+          <p class="mt-1 text-slate-600">Kichik jamoalar uchun</p>
+          <div class="mt-4 text-4xl font-extrabold text-slate-900">$29</div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600">
+            <li>✔ Hamkorlik uchun tayyor</li>
+            <li>✔ Qo‘llab-quvvatlash</li>
+            <li>✔ Hujjatlar namunasi</li>
+          </ul>
+          <button class="mt-6 w-full px-4 py-3 rounded-2xl border border-slate-300/80 bg-white hover:bg-slate-50 transition font-semibold">Tanlash</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold text-slate-900 text-center">Ko‘p so‘raladigan savollar</h2>
+      <div class="mt-8 divide-y divide-slate-200 rounded-3xl border border-slate-200 bg-white shadow-soft">
+        <details class="group p-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-slate-900 font-semibold">
+            Tailwind’ni qanday ulayman?
+            <span class="transition group-open:rotate-180">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-600 text-sm leading-relaxed">
+            Eng oson yo‘li — yuqoridagi kabi CDN scriptni head ichiga qo‘shish.
+          </div>
+        </details>
+        <details class="group p-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-slate-900 font-semibold">
+            Build jarayoni shartmi?
+            <span class="transition group-open:rotate-180">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-600 text-sm leading-relaxed">
+            Test yoki kichik loyihalar uchun shart emas. Katta loyihalarda PostCSS bilan purging tavsiya etiladi.
+          </div>
+        </details>
+        <details class="group p-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between text-slate-900 font-semibold">
+            Qanday qilib tezda moslashtiraman?
+            <span class="transition group-open:rotate-180">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.06 1.06l-4.24 4.25a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+            </span>
+          </summary>
+          <div class="mt-4 text-slate-600 text-sm leading-relaxed">
+            Klasslar orqali rang, padding, grid va boshqalarni bir zumda o‘zgartiring.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+        <p>© <span id="y"></span> TestSite. Sinov sahifasi.</p>
+        <div class="flex items-center gap-4">
+          <a class="hover:text-slate-900" href="#features">Xususiyatlar</a>
+          <a class="hover:text-slate-900" href="#pricing">Narxlar</a>
+          <a class="hover:text-slate-900" href="#faq">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Joriy yil
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
