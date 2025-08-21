@@ -1,7 +1,7 @@
 # 🚀 Test Project  
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Eldjey/test_project/main/assets/banner.gif" alt="Banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/Eldjey/test/main/assets/banner.gif" alt="Banner" width="100%" />
 </p>
 
 <p align="center"><b>TailwindCSS bilan yaratilgan oddiy, chiroyli test loyiha</b></p>
