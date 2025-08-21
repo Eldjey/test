@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🚀 Test Project  
 
 <p align="center">
