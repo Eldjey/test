@@ -38,7 +38,7 @@
 ```bash
 =======
 🚀 Test Project
-<p align="center"> <img src="https://raw.githubusercontent.com/Eldjey/test_project/main/assets/banner.gif" alt="Banner" width="100%" /> </p> <p align="center"><b>TailwindCSS bilan yaratilgan oddiy, chiroyli test loyiha</b></p>
+<p align="center"> <img src="https://raw.githubusercontent.com/Eldjey/test/main/assets/banner.gif" alt="Banner" width="100%" /> </p> <p align="center"><b>TailwindCSS bilan yaratilgan oddiy, chiroyli test loyiha</b></p>
 📌 Badgeler
 <p align="center"> <img src="https://img.shields.io/github/stars/Eldjey/test_project?style=for-the-badge" /> <img src="https://img.shields.io/github/forks/Eldjey/test_project?style=for-the-badge" /> <img src="https://img.shields.io/github/license/Eldjey/test_project?style=for-the-badge" /> <img src="https://img.shields.io/badge/made%20with-TailwindCSS-38B2AC?style=for-the-badge" /> </p>
 🎥 Demo
